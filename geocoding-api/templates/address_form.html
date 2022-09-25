@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Form</title>
+  </head>
+  <body>
+    <h1>Enter An Address</h1>
+    <form action="/geocode">
+      <input type="text" name="address" placeholder="address" />
+      <input type="submit" placeholder="Go" />
+    </form>
+
+    <div>
+      {% if coords %}
+      <h3>Lat: {{ coords['lat'] }}</h3>
+      <h3>Long: {{ coords['lng'] }}</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>
